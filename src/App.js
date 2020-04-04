@@ -4,8 +4,6 @@ import AceEditor from 'react-ace';
 import 'ace-builds/src-noconflict/mode-css';
 import 'ace-builds/src-noconflict/theme-chrome';
 
-import { Style } from 'react-style-tag';
-
 function App() {
   const [currentStyle, setCurrentStyle] = useState(``)
   return (
@@ -17,9 +15,11 @@ function App() {
       value={currentStyle}
       name="CSS-EDITOR"
       />
-      <Style>
-        {currentStyle}
-      </Style>
+      <style dangerouslySetInnerHTML={{
+        __html: currentStyle
+      }}>
+
+      </style>
     </div>
   );
 }

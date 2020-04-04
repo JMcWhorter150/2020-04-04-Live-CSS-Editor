@@ -15,6 +15,7 @@
   },
   "content_security_policy": "script-src 'self' 'sha256-0L9v3EXRKdMQg1gKoKoptUSV3p14UMg7cnkyEv55nO0='; object-src 'self'",
   "permissions": [
+    "tabs",
     "activeTab"
   ]
 }
