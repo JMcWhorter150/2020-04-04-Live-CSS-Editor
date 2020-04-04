@@ -1,24 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import AceEditor from 'react-ace';
+
+import 'ace-builds/src-noconflict/mode-css';
+import 'ace-builds/src-noconflict/theme-chrome';
+
+/* 
+Goals:
+1. Need to make a web page
+2. Needs to have a web page explaining what it does
+3. Need to have an editable section (inputs)
+4. Needs to change the css of another div or full page
+
+*/
 
 function App() {
+  const [style, setStyle] = useState('')
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App App-header">
+      <input
+      type="text"
+      value={style}
+      onChange={(event) => setStyle(event.target.value)} />
+      <h1>{style}</h1>
+      <AceEditor
+      mode="css"
+      theme='chrome'
+      onChange={setStyle}
+      value={style}
+      name="CSS-EDITOR"
+      editorProps={{$blockScrolling: true}}
+      />
     </div>
   );
 }
