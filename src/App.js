@@ -18,10 +18,6 @@ function App() {
   const [style, setStyle] = useState('')
   return (
     <div className="App App-header">
-      <input
-      type="text"
-      value={style}
-      onChange={(event) => setStyle(event.target.value)} />
       <h1>{style}</h1>
       <AceEditor
       mode="css"
